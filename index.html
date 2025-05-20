@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -34,6 +37,20 @@
           <p>Popular</p>
         </article>
       </section>
+      <!-- <input type="range" id="progress" min="0" max="100" value="0" /> -->
+
+      <svg width="220" height="220" viewBox="0 0 200 200">
+        <circle
+          id="progressCircle"
+          cx="100"
+          cy="100"
+          r="90"
+          stroke="green"
+          stroke-width="5"
+          fill="transparent"
+        />
+      </svg>
+
       <section class="btn-container">
         <button class="btn btn-primary rounded start" data-state="start">
           START

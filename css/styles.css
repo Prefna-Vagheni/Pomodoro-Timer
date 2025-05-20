@@ -39,6 +39,7 @@ main {
   max-width: 800px;
   min-height: 100vh;
   margin: 20px auto;
+  position: relative;
   padding: 20px;
   background: #fff;
   border-radius: 8px;
@@ -169,6 +170,7 @@ footer {
   color: var(--primary-text-color);
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
 }
 .pomodoro:hover {
   background-color: #e9eef2;
@@ -176,3 +178,47 @@ footer {
 .timer {
   font-size: 5rem;
 }
+
+/* SVG */
+
+circle {
+  fill: none;
+  stroke: cornflowerblue;
+  stroke-width: 2.5px;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 565.48;
+  /* stroke-dashoffset: 0; */
+  /* animation: move 1200s linear forwards; */
+}
+.animate {
+  animation: move 1200s linear forwards;
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+}
+
+@keyframes move {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/* 
+@keyframes changeColor {
+  0% {
+    stroke: blue;
+  }
+  50% {
+    stroke: purple;
+  }
+  100% {
+    stroke: red;
+  }
+}
+
+.animate-circle {
+  animation: changeColor 2s linear forwards;
+} */
