@@ -3,19 +3,22 @@
 const min = document.querySelector('.minutes');
 const sec = document.querySelector('.seconds');
 
-const year = document.querySelector('.year');
-const date = new Date();
-const getYear = date.getFullYear();
-year.textContent = getYear;
+const getYear = new Date().getFullYear();
+document.querySelector('.year').textContent = getYear;
 
-console.log(+min.textContent);
-// setTimeout(() => console.log('delayed 3 secs'), 3000);
-let minCount = +min.textContent;
-let secCount = +sec.textContent;
-const interval = setInterval(() => {
-  secCount--;
-  const interval2 = setInterval(() => {
-    if (secCount === 0) minCount--;
+let minCount = 0;
+let secCount = 10;
+
+document.querySelector('.start').addEventListener('click', function () {
+  const interval = setInterval(() => {
+    min.textContent = minCount <= 9 ? `${0}${minCount}` : minCount;
+    sec.textContent = secCount <= 9 ? `${0}${secCount}` : secCount;
+
+    secCount--;
+    if (secCount < 0) {
+      minCount--;
+      secCount = 59;
+      if (minCount < 0) clearInterval(interval);
+    }
   }, 1000);
-  console.log(minCount, secCount);
-}, 1000);
+});
